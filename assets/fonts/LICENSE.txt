@@ -1,0 +1,24 @@
+Tipografías incluidas en este sitio
+===================================
+
+Las dos familias se auto-alojan (no se cargan desde Google Fonts) para que el
+sitio no haga ninguna petición a terceros. Ambas están bajo la SIL Open Font
+License 1.1, que permite uso comercial, incrustación y redistribución.
+
+1. Cinzel — Natanael Gama
+   Archivos: cinzel-latin.woff2, cinzel-latin-ext.woff2
+   Licencia: SIL Open Font License 1.1
+   https://fonts.google.com/specimen/Cinzel
+
+2. Inter — Rasmus Andersson
+   Archivos: inter-latin.woff2, inter-latin-ext.woff2
+   Licencia: SIL Open Font License 1.1
+   https://fonts.google.com/specimen/Inter
+
+Texto completo de la licencia: https://openfontlicense.org/
+
+Resumen de lo que permite la OFL 1.1:
+  · Usar las fuentes en proyectos comerciales.
+  · Incrustarlas en un sitio web o en una app.
+  · Modificarlas y redistribuirlas, siempre bajo la misma licencia.
+Lo único que prohíbe es venderlas por separado como producto en sí mismo.

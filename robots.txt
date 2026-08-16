@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO(dominio): reemplazar jdmdetails.com por el dominio real al comprarlo.
+Sitemap: https://jdmdetails.com/sitemap.xml

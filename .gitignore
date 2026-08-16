@@ -1,0 +1,22 @@
+# SO / editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Secretos y entorno — nunca deben llegar al repo
+.env
+.env.*
+*.pem
+*.key
+
+# Logs y temporales
+*.log
+node_modules/
+.cache/
+.tmp/
+
+# Artefactos de despliegue
+.netlify/
+.vercel/

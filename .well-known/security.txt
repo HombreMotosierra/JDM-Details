@@ -1,0 +1,7 @@
+# Canal para reportar vulnerabilidades — RFC 9116
+# TODO(cliente): confirmar el correo de contacto y renovar Expires cada año.
+
+Contact: mailto:security@jdmdetails.com
+Expires: 2027-08-16T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://jdmdetails.com/.well-known/security.txt
