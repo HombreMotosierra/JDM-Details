@@ -8,6 +8,39 @@ Responsive, bilingüe EN/ES, sin backend y sin dependencias de terceros.
 
 ---
 
+## 0. Enseñárselo al cliente
+
+Hay dos formas, y sirven para cosas distintas:
+
+| | `index.html` (el sitio) | `prototipo.html` (archivo único) |
+|---|---|---|
+| Qué es | El sitio real, repartido en varios archivos | Todo el sitio empaquetado en **un solo archivo** |
+| Peso | ~350 KB | ~300 KB |
+| Sirve para | Publicar en el dominio propio | Mandarlo por WhatsApp o correo |
+| Funciona sin internet | No | **Sí**, con doble clic |
+| Se indexa en Google | Sí | No (lleva `noindex`) |
+
+`prototipo.html` se genera solo; **no se edita a mano**. Cada vez que cambies
+`index.html`, `styles.css` o `main.js`, vuelve a correr:
+
+```bash
+python3 tools/build-prototipo.py
+```
+
+### Publicarlo en GitHub Pages
+
+En el repositorio → **Settings → Pages → Source: `Deploy from a branch`** →
+rama `main`, carpeta `/ (root)` → **Save**. En un par de minutos queda en:
+
+- `https://hombremotosierra.github.io/JDM-Details/` — el sitio completo
+- `https://hombremotosierra.github.io/JDM-Details/prototipo.html` — el archivo único
+
+> Todas las rutas del proyecto son **relativas**, justamente para que GitHub Pages
+> funcione: los repos de proyecto se sirven en un subdirectorio, y con rutas
+> absolutas (`/assets/…`) el sitio daría 404 en todos los recursos.
+
+---
+
 ## 1. Tecnologías (y por qué)
 
 La página es **informativa**: no tiene usuarios, ni carrito, ni base de datos. Meter
@@ -53,8 +86,12 @@ menos de un segundo y el costo de infraestructura puede ser **US$0/mes**.
 ├── deploy/
 │   ├── .htaccess               Para hosting compartido Apache (cPanel, Hostinger)
 │   └── nginx.conf              Para VPS propio
+├── prototipo.html              Sitio empaquetado en un solo archivo (generado)
+├── .nojekyll                   Evita que GitHub Pages procese el sitio con Jekyll
+├── tools/build-prototipo.py    Genera prototipo.html
 ├── docs/
-│   └── CRONOGRAMA.md           Plan Scrum y fechas hacia producción
+│   ├── CRONOGRAMA.md           Plan Scrum y fechas hacia producción
+│   └── cronograma-cliente.html Versión del cronograma para presentar al cliente
 └── assets/
     ├── css/styles.css
     ├── js/main.js
@@ -73,8 +110,9 @@ python3 -m http.server 8899
 # abrir http://127.0.0.1:8899
 ```
 
-> Ábrelo con un servidor, no con `file://`. Las rutas son absolutas (`/assets/...`)
-> y el `file://` no las resuelve.
+> Las rutas son relativas, así que `index.html` también abre con doble clic desde
+> el disco. Aun así conviene usar el servidor: con `file://` el navegador aplica
+> restricciones de origen que no reflejan cómo se va a comportar en producción.
 
 ---
 

@@ -34,23 +34,32 @@ algo que el cliente puede **ver y abrir en su celular**, no con un informe.
 
 ## 3. Ritmo de reuniones
 
-El cliente pidió reunirse **día de por medio**, con un mínimo de una vez por semana.
-La cadencia propuesta es lunes / miércoles / viernes:
+**Una reunión por semana, todos los lunes.** Una sola sesión de 60 minutos que
+cumple tres funciones seguidas: se muestra lo construido la semana pasada, el
+cliente lo aprueba o pide cambios, y se acuerda qué entra en la semana que
+empieza. Entre lunes y lunes la comunicación es por WhatsApp.
 
-| Día | Reunión | Duración | ¿Con el cliente? | Para qué |
-|---|---|---|---|---|
-| **Lunes** | Planificación del sprint | 30 min | Sí | Se acuerda qué entra en la semana y qué queda fuera. |
-| **Miércoles** | Check-in de avance | 15 min | Sí | Mostrar el avance a mitad de semana y desbloquear pendientes. |
-| **Viernes** | Demo y revisión del sprint | 45 min | Sí *(obligatoria)* | Se muestra lo construido y el cliente lo aprueba o pide ajustes. |
-| **Domingo** | Retrospectiva | 15 min | No | Qué funcionó, qué no, qué se cambia la próxima semana. |
-| Diario | Repaso personal | 5 min | No | Revisar el tablero y confirmar que el sprint sigue en pie. |
+| Momento | Duración | Para qué |
+|---|---|---|
+| **Lunes · Demo** | 20 min | Se muestra en pantalla lo construido durante la semana. |
+| **Lunes · Aprobación** | 15 min | El cliente aprueba o pide ajustes. Lo aprobado no se vuelve a tocar. |
+| **Lunes · Planificación** | 25 min | Se acuerda qué entra en la semana que empieza y qué queda fuera. |
+| Entre semana | — | WhatsApp para dudas puntuales y envío de material. Sin reuniones. |
+| Domingo *(interno)* | 15 min | Retrospectiva del desarrollador. Sin el cliente. |
 
-**La reunión mínima obligatoria es la del viernes.** Si una semana no se puede
-lunes ni miércoles, el proyecto no se detiene: se sigue con lo acordado y se
-ajusta el viernes.
+**Calendario de reuniones:**
 
-*Horario a confirmar en la primera reunión. Las sesiones pueden ser por WhatsApp
-videollamada o presenciales, con el sitio abierto en pantalla.*
+| # | Fecha | Qué se revisa |
+|---|---|---|
+| 1 | lun 17 de agosto | Prototipo · arranque del Sprint 1 |
+| 2 | lun 24 de agosto | Contenido real · arranque del Sprint 2 |
+| 3 | lun 31 de agosto | Sitio en línea · arranque del Sprint 3 |
+| 4 | lun 7 de septiembre | Visibilidad · **luz verde para publicar** |
+| 5 | lun 14 de septiembre | Sitio ya publicado · revisión post-lanzamiento |
+| 6 | lun 21 de septiembre | Capacitación, entrega de accesos y cierre |
+
+*Una hora, por videollamada de WhatsApp o presencial, con el sitio abierto en
+pantalla. Horario a confirmar en la primera reunión.*
 
 ---
 
@@ -109,7 +118,7 @@ verdadera del negocio.
 | 1.5 | Como visitante, quiero ver la **lista real de ciudades** donde prestan servicio. | Should |
 | 1.6 | Como dueño, quiero que aparezca mi **horario de atención** correcto. | Should |
 
-**Lo que necesitamos del cliente — a más tardar el miércoles 19 de agosto:**
+**Lo que necesitamos del cliente — a más tardar el viernes 21 de agosto:**
 
 - [ ] Precio de los tres paquetes (o el rango, si depende del tamaño del vehículo)
 - [ ] 6 a 12 fotos de trabajos reales, preferiblemente en pares antes/después
@@ -150,9 +159,11 @@ verificación de que la página redirige siempre a HTTPS.
 | **B. Hosting compartido** (Hostinger, cPanel) | ~US$12/año + US$3–5/mes | Si el cliente ya tiene hosting contratado |
 | **C. Servidor propio (VPS)** | ~US$12/año + US$5–10/mes | Solo si más adelante se agregan reservas en línea |
 
-*Cifras de referencia; se confirman al momento de la compra. El dominio se registra
-**a nombre del cliente**, con sus datos y su tarjeta: la marca es suya, no del
-desarrollador.*
+*El dominio y el hosting del **primer año** están incluidos en el valor del
+proyecto: el cliente no pone tarjeta. Aun así, el dominio se registra **a nombre
+del cliente** —él figura como titular— porque la marca es suya, no del
+desarrollador. A partir del segundo año la renovación (~US$12) corre por su
+cuenta, o queda cubierta si contrata el plan de mantenimiento.*
 
 **Definición de terminado:** el cliente abre la dirección en su celular, ve el
 candado y la página se ve igual que en el prototipo.
@@ -211,7 +222,7 @@ y pedirle a 3–5 clientes satisfechos que dejen su reseña.
 
 **Salida a producción — viernes 11 de septiembre:**
 
-1. Última aprobación del cliente en la demo (mañana del viernes).
+1. Luz verde del cliente en la reunión del lunes 7 de septiembre.
 2. Se retira el bloqueo de indexación y se publica.
 3. Se avisa a Google mediante Search Console.
 4. Se actualiza el enlace de la biografía de Instagram.
@@ -256,10 +267,10 @@ y pedirle a 3–5 clientes satisfechos que dejen su reseña.
 
 | Riesgo | Impacto | Qué hacemos |
 |---|---|---|
-| El material del cliente (fotos, precios) llega tarde | **Alto** — corre todo el cronograma | Se pide en el primer sprint, con fecha límite el miércoles 19 de agosto. Si no llega, el sitio se publica con precios «consultar» y las fotos se suman después |
+| El material del cliente (fotos, precios) llega tarde | **Alto** — corre todo el cronograma | Se pide en la reunión del 17 de agosto, con fecha límite el viernes 21. Si no llega, el sitio se publica con precios «consultar» y las fotos se suman después |
 | El cliente no tiene reseñas todavía | Medio | Se lanza sin la sección de reseñas y se activa cuando existan. Nunca se inventan |
 | Los DNS del dominio tardan en propagarse | Medio | Se compra el dominio al inicio del Sprint 2, dejando 48 h de margen |
-| El cliente cambia de opinión sobre el diseño | Medio | Las demos de los viernes existen justo para eso: los cambios se detectan temprano, no en el lanzamiento |
+| El cliente cambia de opinión sobre el diseño | Medio | Para eso existe la demo de cada lunes: los cambios se detectan temprano, no en el lanzamiento |
 | El negocio no tiene dirección física | Bajo | Se configura Google Business como negocio de servicio a domicilio, sin dirección visible |
 | Aparecen pedidos fuera del alcance (reservas en línea, pagos) | Bajo | Se anotan en el backlog como fase 2 y se cotizan aparte |
 
@@ -282,7 +293,42 @@ propia cotización.
 
 ---
 
-## 9. Tablero de trabajo
+## 9. Condiciones comerciales
+
+**Valor del proyecto completo: US$800.** Precio cerrado, todo incluido.
+
+| Incluido en los US$800 | |
+|---|---|
+| Diseño y construcción del sitio | Página completa, a la medida, no una plantilla |
+| Versión en inglés y en español | Con botón de cambio y detección del idioma del visitante |
+| Adaptación a celular, tablet y computador | Probado en dispositivos reales |
+| **Dominio, primer año** | Registrado a nombre del cliente |
+| **Hosting, primer año** | Con certificado de seguridad HTTPS incluido |
+| Perfil de Google Business | Creación, verificación y conexión con el sitio |
+| SEO local | Para aparecer al buscar el servicio en la zona |
+| Seguridad y velocidad | Auditadas con herramientas independientes |
+| 6 reuniones de acompañamiento | Una por semana, los lunes |
+| Manual de mantenimiento | Con capturas de pantalla |
+| Capacitación en vivo | Sesión de 45 minutos |
+| Entrega de todos los accesos | A nombre del cliente |
+
+**Forma de pago:** 50% (US$400) al aprobar el plan, 50% (US$400) el día de la
+publicación.
+
+**A partir del segundo año** el cliente asume la renovación del dominio y del
+hosting (~US$12 al año con la opción recomendada), o contrata el plan de
+mantenimiento.
+
+**Plan de mantenimiento — opcional, US$40 al mes:** cambios de precios, carga de
+fotos nuevas, actualización de horarios, monitoreo de que el sitio siga en línea
+y renovación del dominio y el hosting incluidas. Se puede cancelar cuando quiera.
+
+Los puntos de la sección 8 (reservas en línea, pagos, blog, campañas pagadas,
+fotografía profesional) **no** están incluidos y se cotizan aparte.
+
+---
+
+## 10. Tablero de trabajo
 
 El seguimiento vive en GitHub, sobre el repositorio
 `HombreMotosierra/JDM-Details`:
@@ -296,7 +342,7 @@ El seguimiento vive en GitHub, sobre el repositorio
 | **Hecho** | Aprobado y publicado |
 
 Cada historia de usuario de este documento se convierte en un *issue*. El cliente
-no necesita entrar a GitHub: lo ve todo en la demo del viernes.
+no necesita entrar a GitHub: lo ve todo en la demo del lunes.
 
 ---
 

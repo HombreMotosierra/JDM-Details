@@ -275,6 +275,43 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
 .sev.mid{color:var(--accent-ink);}
 .sev.lo{color:var(--muted);}
 
+/* ── Precio ──────────────────────────────────────────────────────────── */
+.price{
+  margin-top:1.6rem;border:1px solid var(--rule);border-radius:12px;
+  background:var(--surface);box-shadow:var(--shadow);overflow:hidden;
+}
+.price-top{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1rem;
+  padding:1.4rem 1.5rem;border-bottom:1px solid var(--rule);
+  background:var(--accent-wash);
+}
+.price-fig{
+  font-family:'CinzelDoc',serif;font-size:2.5rem;font-weight:700;line-height:1;
+  color:var(--accent-ink);font-variant-numeric:tabular-nums;letter-spacing:.01em;
+}
+.price-note{font-size:.85rem;color:var(--muted);}
+.price-body{padding:1.4rem 1.5rem;}
+.incl{
+  margin:0;padding:0;list-style:none;
+  display:grid;gap:.55rem 1.6rem;
+  grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
+}
+.incl li{position:relative;padding-left:1.55rem;font-size:.9rem;color:var(--ink-soft);}
+.incl li::before{
+  content:'';position:absolute;left:.15rem;top:.42em;
+  width:.5rem;height:.28rem;
+  border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);
+  transform:rotate(-45deg);
+}
+.terms{
+  display:grid;gap:1px;background:var(--rule);
+  border-top:1px solid var(--rule);
+}
+.term{background:var(--surface);padding:1.05rem 1.5rem;}
+.term b{display:block;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:.3rem;}
+.term span{font-size:.89rem;color:var(--muted);}
+@media (min-width:720px){.terms{grid-template-columns:repeat(3,1fr);}}
+
 /* ── Two-column lists ────────────────────────────────────────────────── */
 .cols{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:1.5rem;}
 .cols h3{font-size:.95rem;letter-spacing:.04em;margin-bottom:.7rem;}
@@ -340,14 +377,14 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
   <div class="wrap">
     <p class="label">Cómo trabajamos</p>
     <h2>Reuniones cortas, día de por medio</h2>
-    <p class="lead">Nos vemos lunes, miércoles y viernes. La del viernes es la importante: ahí se muestra lo construido y usted lo aprueba o pide cambios. Si una semana solo alcanza para una reunión, es la del viernes.</p>
+    <p class="lead">Una reunión por semana, todos los lunes, de una hora. En esa hora pasan tres cosas: le muestro lo que se construyó, usted lo aprueba o pide cambios, y acordamos qué se hace la semana que empieza. Entre lunes y lunes, WhatsApp.</p>
 
     <div class="week">
-      <div class="day on"><b>Lun</b><span>Planificación<br>de la semana</span><span class="mins">30 min</span></div>
+      <div class="day on key"><b>Lun</b><span>Demo,<br>aprobación y<br>planificación</span><span class="mins">60 min</span></div>
       <div class="day"><b>Mar</b><span>Desarrollo</span><span class="mins">—</span></div>
-      <div class="day on"><b>Mié</b><span>Check-in<br>de avance</span><span class="mins">15 min</span></div>
+      <div class="day"><b>Mié</b><span>Desarrollo</span><span class="mins">—</span></div>
       <div class="day"><b>Jue</b><span>Desarrollo</span><span class="mins">—</span></div>
-      <div class="day on key"><b>Vie</b><span>Demo y<br>aprobación</span><span class="mins">45 min</span></div>
+      <div class="day"><b>Vie</b><span>Desarrollo</span><span class="mins">—</span></div>
       <div class="day"><b>Sáb</b><span>Margen</span><span class="mins">—</span></div>
       <div class="day"><b>Dom</b><span>Cierre de<br>sprint</span><span class="mins">—</span></div>
     </div>
@@ -407,8 +444,8 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
           <h3>Dominio, hosting y pruebas</h3>
           <p>La página deja de vivir en un computador y existe en internet. Se compra el dominio a nombre suyo, se configura el certificado de seguridad y se publica en una dirección privada para que usted la pruebe de verdad antes de mostrarla.</p>
           <ul class="bullets">
-            <li>El dominio se registra con sus datos: la marca es suya, no del desarrollador.</li>
-            <li>Costo esperado: unos <span class="num">US$12</span> al año por el dominio, y <span class="num">US$0</span> de hosting con la opción recomendada.</li>
+            <li>El dominio y el hosting del primer año van incluidos: usted no pone tarjeta.</li>
+            <li>Aun así, el dominio se registra con sus datos como titular. La marca es suya, no del desarrollador.</li>
           </ul>
           <div class="deliver"><b>Entregable</b>Una dirección web real, con candado de seguridad, abierta desde su celular.</div>
         </div>
@@ -435,7 +472,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
           <h3>Pruebas y lanzamiento<span class="tag go">Vie 11 sep</span></h3>
           <p>Rompemos el sitio a propósito antes de que lo haga un cliente real: teléfonos iPhone y Android, pantallas grandes, cada botón de WhatsApp uno por uno, el recorrido completo en los dos idiomas y una auditoría de seguridad independiente.</p>
           <ul class="bullets">
-            <li>El viernes en la mañana usted da la última aprobación; en la tarde el sitio queda público.</li>
+            <li>En la reunión del lunes 7 usted da la luz verde; el viernes 11 el sitio queda público.</li>
             <li>Se actualiza el enlace de la biografía de Instagram.</li>
             <li>El sábado y el domingo quedan libres como colchón, por si algo hay que corregir.</li>
           </ul>
@@ -464,7 +501,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
     <p class="lead">Todo lo demás depende del desarrollo. Esto no: si el material llega tarde, la fecha del 11 de septiembre se corre una semana completa.</p>
 
     <div class="callout">
-      <div class="when">Fecha límite · miércoles 19 de agosto</div>
+      <div class="when">Fecha límite · viernes 21 de agosto</div>
       <h3>Material del negocio</h3>
       <ul class="checks">
         <li>Precio de los tres paquetes, o el rango si depende del tamaño del vehículo.</li>
@@ -510,7 +547,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
           <tr>
             <th scope="row">Cambios de opinión sobre el diseño</th>
             <td><span class="sev mid">Medio</span></td>
-            <td>Para eso existe la demo de los viernes: los cambios se detectan temprano, no el día del lanzamiento.</td>
+            <td>Para eso existe la demo de cada lunes: los cambios se detectan temprano, no el día del lanzamiento.</td>
           </tr>
           <tr>
             <th scope="row">El negocio no tiene dirección física</th>
@@ -524,6 +561,42 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <p class="label">Inversión</p>
+    <h2>Un precio cerrado, sin sorpresas</h2>
+    <p class="lead">No se cobra por hora ni se factura por cambios durante el proyecto. Es un valor fijo que cubre desde el diseño hasta la capacitación, con el dominio y el hosting del primer año adentro.</p>
+
+    <div class="price">
+      <div class="price-top">
+        <span class="price-fig">US$800</span>
+        <span class="price-note">proyecto completo · todo incluido</span>
+      </div>
+      <div class="price-body">
+        <ul class="incl">
+          <li>Diseño y construcción del sitio, hecho a la medida</li>
+          <li>Versión en inglés y en español</li>
+          <li>Adaptado a celular, tablet y computador</li>
+          <li><b>Dominio propio, primer año pago</b></li>
+          <li><b>Hosting, primer año pago</b></li>
+          <li>Certificado de seguridad HTTPS</li>
+          <li>Perfil de Google Business creado y verificado</li>
+          <li>SEO local para aparecer en las búsquedas de la zona</li>
+          <li>Auditoría de seguridad y de velocidad</li>
+          <li>Seis reuniones de acompañamiento</li>
+          <li>Manual de mantenimiento con capturas</li>
+          <li>Capacitación en vivo de 45 minutos</li>
+        </ul>
+      </div>
+      <div class="terms">
+        <div class="term"><b>Forma de pago</b><span>US$400 al aprobar el plan y US$400 el día de la publicación.</span></div>
+        <div class="term"><b>Desde el segundo año</b><span>La renovación del dominio y el hosting cuesta unos US$12 al año y corre por su cuenta.</span></div>
+        <div class="term"><b>Mantenimiento · opcional</b><span>US$40 al mes: cambios, fotos nuevas, monitoreo y renovaciones incluidas. Cancelable cuando quiera.</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -557,7 +630,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap;}
       </div>
     </div>
 
-    <p class="lead" style="margin-top:1.6rem;">Nada de esto está descartado: cualquiera puede convertirse en una fase 2, con su propio plan y su propia cotización. Se listan aquí para que la fecha del 11 de septiembre signifique lo mismo para los dos.</p>
+    <p class="lead" style="margin-top:1.6rem;">Nada de esto está descartado: cualquiera puede convertirse en una fase 2, con su propio plan y su propia cotización. Se listan aquí para que tanto la fecha del 11 de septiembre como los US$800 signifiquen lo mismo para los dos.</p>
   </div>
 </section>
 
