@@ -39,6 +39,10 @@ rama `main`, carpeta `/ (root)` → **Save**. En un par de minutos queda en:
 > funcione: los repos de proyecto se sirven en un subdirectorio, y con rutas
 > absolutas (`/assets/…`) el sitio daría 404 en todos los recursos.
 
+> ⚠️ Pages es **solo para revisión**. `prototipo.html` lleva `noindex`, pero la raíz
+> no, así que Google podría llegar a indexar la copia de `github.io` y competir
+> después con el dominio real. Ver el TODO 10: apagar Pages el día del lanzamiento.
+
 ---
 
 ## 1. Tecnologías (y por qué)
@@ -132,6 +136,7 @@ Cada punto está marcado en el código con un comentario `TODO` o con una nota
 | 7 | **Horario real** de atención | Pie de página + `JSON-LD` (`openingHoursSpecification`) |
 | 8 | **Correo de contacto** de seguridad | `.well-known/security.txt` |
 | 9 | Dirección física, si el cliente quiere aparecer en Google Maps | `JSON-LD` → añadir `address` |
+| 10 | **Apagar GitHub Pages el día del lanzamiento** para que la copia de `github.io` no compita en Google con el dominio real | Settings → Pages → Source: `None` |
 
 ### Cómo editar textos
 
